@@ -5,12 +5,11 @@ const { categoria, cantidad, texto } = Astro.props;
 const currentPath = Astro.url.pathname; // ej: "/productos/valvulas"
 
 const categorias = [
-  { id: "valvulas", nombre: "Válvulas", cantidad: "+4" },
-  { id: "tuberias", nombre: "Tuberías", cantidad: "+5" },
-  { id: "bridas", nombre: "Accesorios y Bridas", cantidad: "+7" },
-  { id: "otros", nombre: "Otros", cantidad: "+4" },
+  { id: 'valvulas', nombre: 'Válvulas', cantidad: '+4' },
+  { id: 'tuberias', nombre: 'Tuberías', cantidad: '+5' },
+  { id: 'bridas', nombre: 'Accesorios y Bridas', cantidad: '+7' },
+  { id: 'otros', nombre: 'Otros', cantidad: '+4' },
 ];
-
 ---
 
 <Layout
@@ -33,11 +32,11 @@ const categorias = [
           <span>/</span>
           <a href="/productos">Productos</a>
           <span>/</span>
-          <span aria-current="page">{ categoria }</span>
+          <span aria-current="page">{categoria}</span>
         </nav>
 
-        <h1 class="categoria-title">Productos - { categoria }</h1>
-        <p class="categoria-sub">Catálogo • { cantidad } categorías</p>
+        <h1 class="categoria-title">Productos - {categoria}</h1>
+        <p class="categoria-sub">Catálogo • {cantidad} categorías</p>
       </div>
     </div>
   </section>
@@ -49,18 +48,21 @@ const categorias = [
           <h3 class="aside-title">Categorías</h3>
 
           <!-- <ul class="category-list" role="list"> -->
-           {categorias.map(cat => {
-                const link = `/productos/${cat.id}`;
-                const isActive = currentPath === link;
-                return (
+          {
+            categorias.map((cat) => {
+              const link = `/productos/${cat.id}`;
+              const isActive = currentPath.replace(/\/$/, '') === link;
+              return (
                 <li class={`category-item ${isActive ? 'active' : ''}`} role="listitem" data-cat={cat.id}>
-                    <a href={link} class="cat-btn">
+                  <a href={link} class="cat-btn">
                     <span class="cat-name">{cat.nombre}</span>
                     <span class="cat-count">{cat.cantidad}</span>
-                    </a>
+                  </a>
                 </li>
-                )
-            })}
+              );
+            })
+          }
+
           <!-- </ul> -->
 
           <div class="aside-footer">
@@ -70,13 +72,12 @@ const categorias = [
 
         <main class="products-main" id="productsMain" aria-live="polite">
           <div class="products-header">
-            <p class="section-subtitle">{ texto }</p>
+            <p class="section-subtitle">{texto}</p>
           </div>
 
           <div class="products-grid" role="list">
             <!-- PRODUCTOS -->
             <slot />
-
           </div>
         </main>
       </div>
