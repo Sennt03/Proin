@@ -1,0 +1,172 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+title="Productos Industriales"
+css="home"
+description="Proin - Venta de Productos Industriales, Válvulas, Tuberias, Accesorios, Bridas, Otros."
+>
+	<!-- HERO -->
+    <section id="hero" class="hero-section">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="container hero-content reveal">
+        <h1 class="hero-title">SOLUCIONES Y SERVICIOS PARA LA INDUSTRIA</h1>
+        <p class="hero-lead">Generar confianza y satifacer las necesidades de nuestros clientes con productos de calidad.</p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="/productos">Explorar Productos</a>
+          <a class="btn-secondary" href="#about">Conocer más de PROIN</a>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="chip">Entrega Segura</div>
+          <div class="chip">Garantía de fábrica</div>
+          <div class="chip">Servicio</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title reveal">Nuestra Empresa</h2>
+        <p class="section-subtitle reveal">La solución que impulsa tu industria.</p>
+
+        <div class="about-wrap reveal">
+          <div class="about-img">
+            <img src="/assets/images/fondo_home.jpg" alt="PROIN - Productos Industriales">
+          </div>
+          <div class="about-body">
+            <h3>Propósito</h3>
+            <p><strong>Proin</strong> tiene como objetivo servir al sector industrial y de construcción, en sus etapas de mantenimiento y elaboración de proyectos, contamos con una gama amplia de productos de calidad como son en acero negro, galvanizado e inoxidable. Algunos de estos productos son usados en la conducción de fluidos, especialmente vapor y agua.
+            <br>
+            Además contamos con los Servicios Mecánicos Integrales, diseño,  fabricación , maquinado de piezas y partes mecanizadas en CNC.</p>
+
+            <div class="bio-grid">
+              <div class="bio-card">
+                <h5>Misión</h5>
+                <p>Nos enfocamos en satisfacer de manera integral y  profesional la demanda del mercado de forma responsable y segura.</p>
+              </div>
+
+              <div class="bio-card">
+                <h5>Visión</h5>
+                <p>Ser el mejor aliado comercial y proveedor de materiales para los sectores industriales impulsando tu negocio hacia nuevos niveles.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- VALORES -->
+    <section id="values" class="values-section" aria-labelledby="valuesTitle">
+    <div class="container">
+        <h2 id="valuesTitle" class="section-title reveal">Nuestros Valores</h2>
+        <p class="section-subtitle reveal">Principios que inspiran nuestra manera de trabajar y entregan confianza a cada cliente.</p>
+
+        <div class="values-grid reveal" role="list">
+        <article class="value-card" role="listitem" aria-labelledby="v1-title">
+            <div class="value-head">
+            <div class="value-icon" aria-hidden="true"><i class="fas fa-balance-scale"></i></div>
+            <div>
+                <div id="v1-title" class="value-title">Integridad</div>
+            </div>
+            </div>
+            <div class="value-badge">Ética</div>
+        </article>
+
+        <article class="value-card" role="listitem" aria-labelledby="v2-title">
+            <div class="value-head">
+            <div class="value-icon" aria-hidden="true"><i class="fas fa-certificate"></i></div>
+            <div>
+                <div id="v2-title" class="value-title">Calidad</div>
+            </div>
+            </div>
+            <div class="value-badge">Certificada</div>
+        </article>
+
+        <article class="value-card" role="listitem" aria-labelledby="v3-title">
+            <div class="value-head">
+            <div class="value-icon" aria-hidden="true"><i class="fas fa-shield-alt"></i></div>
+            <div>
+                <div id="v3-title" class="value-title">Seguridad</div>
+            </div>
+            </div>
+            <div class="value-badge">Protección</div>
+        </article>
+
+        <article class="value-card" role="listitem" aria-labelledby="v5-title">
+            <div class="value-head">
+            <div class="value-icon" aria-hidden="true"><i class="fas fa-handshake"></i></div>
+            <div>
+                <div id="v5-title" class="value-title">Compromiso</div>
+            </div>
+            </div>
+            <div class="value-badge">Comprometidos</div>
+        </article>
+        </div>
+    </div>
+    </section>
+
+
+    <!-- CATALOG / GALLERY (NEW) -->
+    <section id="catalog">
+      <div class="container">
+        <h2 class="section-title reveal">Catálogo</h2>
+        <p class="section-subtitle reveal">Haz click en cualquier categoría para ver el catálogo completo</p>
+
+        <div class="catalog-grid reveal">
+          <a class="catalog-card" role="link" tabindex="0" href="/productos/valvulas">
+            <img src="/assets/images/valvulas.png" alt="Válvulas -  PROIN">
+            <div class="catalog-overlay"></div>
+            <div class="meta">
+              <div>
+                <h4>Válvulas</h4>
+                <div class="count">+4 categorías</div>
+              </div>
+
+              <div class="hover-cta">Ver catálogo</div>
+            </div>
+          </a>
+
+          <a class="catalog-card" role="link" tabindex="0" href="/productos/tuberias">
+            <img src="/assets/images/tuberias.jpg" alt="Tuberías - PROIN">
+            <div class="catalog-overlay"></div>
+            <div class="meta">
+              <div>
+                <h4>Tuberías</h4>
+                <div class="count">+5 categorías</div>
+              </div>
+              <div class="hover-cta">Ver catálogo</div>
+            </div>
+          </a>
+
+          <a class="catalog-card" role="link" tabindex="0" href="/productos/bridas">
+            <img src="/assets/images/accesorios.png" alt="Accesorios y Bridas - PROIN">
+            <div class="catalog-overlay"></div>
+            <div class="meta">
+              <div>
+                <h4>Accesorios</h4>
+                <div class="count">+8 categorías</div>
+              </div>
+              <div class="hover-cta">Ver catálogo</div>
+            </div>
+          </a>
+
+          <a class="catalog-card" role="link" tabindex="0" href="/productos/otros">
+            <img src="/assets/images/otros.jpg" alt="Productos Industriales - PROIN">
+            <div class="catalog-overlay"></div>
+            <div class="meta">
+              <div>
+                <h4>Otros</h4>
+                <div class="count">+5 categorías</div>
+              </div>
+              <div class="hover-cta">Ver catálogo</div>
+            </div>
+          </a>
+      </div>
+    </section>
+</Layout>

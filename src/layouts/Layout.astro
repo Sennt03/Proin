@@ -1,0 +1,44 @@
+---
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+import Navbar from '../components/Navbar.astro';
+
+const { title, description, css } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PROIN | { title }</title>
+
+    <meta name="description" content={ description } />
+    <meta name="author" content="David Ruiz" />
+    <meta name="contact" content="+593 992959886" />
+    <meta name="contact_email" content="davidrsmk144@gmail.com" />
+    <meta name="contact_web" content="www.davidruiz.site" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+    <link rel="stylesheet" href="/assets/styles/styles.css" />
+    {css && <link rel="stylesheet" href={"/assets/styles/" + css + '.css'} />}
+  
+  </head>
+  <body>
+    <Navbar />
+
+    <main>
+      <slot />
+
+      <Contact />
+    </main>
+
+    <Footer />
+
+    <script src="/assets/js/main.js" is:inline></script>
+  </body>
+</html>

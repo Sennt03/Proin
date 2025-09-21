@@ -1,0 +1,85 @@
+---
+import Layout from '../layouts/Layout.astro';
+const { categoria, cantidad, texto } = Astro.props;
+
+const currentPath = Astro.url.pathname; // ej: "/productos/valvulas"
+
+const categorias = [
+  { id: "valvulas", nombre: "Válvulas", cantidad: "+4" },
+  { id: "tuberias", nombre: "Tuberías", cantidad: "+5" },
+  { id: "bridas", nombre: "Accesorios y Bridas", cantidad: "+7" },
+  { id: "otros", nombre: "Otros", cantidad: "+4" },
+];
+
+---
+
+<Layout
+  title="Productos Industriales"
+  css="productos"
+  description="Proin - Venta de Productos Industriales, Válvulas, Tuberias, Accesorios, Bridas, Otros."
+>
+  <section
+    id="categoria"
+    class="categoria-banner"
+    style="background-image: url('/assets/images/fondo_productos.jpg'); background-attachment: fixed"
+    aria-label="Banner de categoría: Productos"
+  >
+    <div class="categoria-overlay" aria-hidden="true"></div>
+
+    <div class="container">
+      <div class="categoria-inner">
+        <nav class="categoria-breadcrumb" aria-label="migas de pan">
+          <a href="/#hero">Inicio</a>
+          <span>/</span>
+          <a href="/productos">Productos</a>
+          <span>/</span>
+          <span aria-current="page">{ categoria }</span>
+        </nav>
+
+        <h1 class="categoria-title">Productos - { categoria }</h1>
+        <p class="categoria-sub">Catálogo • { cantidad } categorías</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="productos" class="products-section" aria-labelledby="productosTitle">
+    <div class="container">
+      <div class="products-layout">
+        <aside class="products-aside" role="navigation" aria-label="Categorias de productos">
+          <h3 class="aside-title">Categorías</h3>
+
+          <!-- <ul class="category-list" role="list"> -->
+           {categorias.map(cat => {
+                const link = `/productos/${cat.id}`;
+                const isActive = currentPath === link;
+                return (
+                <li class={`category-item ${isActive ? 'active' : ''}`} role="listitem" data-cat={cat.id}>
+                    <a href={link} class="cat-btn">
+                    <span class="cat-name">{cat.nombre}</span>
+                    <span class="cat-count">{cat.cantidad}</span>
+                    </a>
+                </li>
+                )
+            })}
+          <!-- </ul> -->
+
+          <div class="aside-footer">
+            <small class="helper">Selecciona una categoría para filtrar</small>
+          </div>
+        </aside>
+
+        <main class="products-main" id="productsMain" aria-live="polite">
+          <div class="products-header">
+            <p class="section-subtitle">{ texto }</p>
+          </div>
+
+          <div class="products-grid" role="list">
+            <!-- PRODUCTOS -->
+            <slot />
+
+          </div>
+        </main>
+      </div>
+    </div>
+  </section>
+</Layout>
